@@ -177,7 +177,10 @@ class VideoPlayer(QWidget):
         self.video_player.setVideoOutput(QVideoWidget(self))
 
         layout = QVBoxLayout(self)
-        layout.addWidget(self.video_player.setVideoOutput())
+        self.video_player = VideoPlayer()
+        video_widget = QVideoWidget()
+        self.video_player.setVideoOutput(video_widget)
+
 
     def play_video(self, video_path):
         video_url = QMediaContent(QUrl.fromLocalFile(video_path))
